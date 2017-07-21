@@ -39,11 +39,6 @@ export default class extends React.Component {
       aaa: "aaa"
     }
   }
-  static async getInitialProps ({ req }) {
-    return req
-      ? { userAgent: req.headers['user-agent'] }
-      : { userAgent: navigator.userAgent }
-  }
 
   render() {
     const width = window.innerWidth; // canvas width
