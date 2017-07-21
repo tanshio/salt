@@ -20,14 +20,14 @@ export default class extends React.Component {
       aaa: "aaa"
     }
   }
-  static async getInitialProps ({ req }) {
-    return req
-      ? { userAgent: req.headers['user-agent'] }
-      : { userAgent: navigator.userAgent }
-  }
+  // static async getInitialProps ({ req }) {
+  //   return req
+  //     ? { userAgent: req.headers['user-agent'] }
+  //     : { userAgent: navigator.userAgent }
+  // }
   render () {
     return <div>
-      Hello World {this.props.userAgent}, {this.state.aaa}
+      Hello World {this.state.aaa}
       <div>Click <Link href="/about"><a>here</a></Link> to read more</div>
     </div>
   }
