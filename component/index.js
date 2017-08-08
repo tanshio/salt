@@ -21,7 +21,7 @@ export default class extends React.Component {
     }
   }
   componentDidMount() {
-    console.log('index mounted')
+    console.log('base mounted')
   }
   // static async getInitialProps ({ req }) {
   //   return req
@@ -31,7 +31,6 @@ export default class extends React.Component {
   render () {
     return <div>
       Hello World {this.state.aaa}
-      <img src="/static/img.png" />
       <div>Click <Link href="/about"><a>here</a></Link> to read more</div>
     </div>
   }
