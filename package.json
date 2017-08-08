@@ -12,6 +12,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "flubber": "^0.3.1",
     "next": "beta",
     "react": "15.5.4",
     "react-dom": "15.5.4",
