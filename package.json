@@ -14,13 +14,17 @@
   "dependencies": {
     "flubber": "^0.3.1",
     "next": "beta",
+    "pixi.js": "^4.5.3",
     "react": "15.5.4",
     "react-dom": "15.5.4",
     "react-ga": "^2.2.0",
+    "react-pixi": "^0.9.12",
     "react-three-renderer": "^3.1.0",
-    "three": "0.84.0"
+    "three": "0.84.0",
+    "three-orbit-controls": "^82.1.0"
   },
   "globals": {
     "window": true
-  }
+  },
+  "devDependencies": {}
 }

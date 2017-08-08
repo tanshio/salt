@@ -20,6 +20,9 @@ export default class extends React.Component {
       aaa: "aaa"
     }
   }
+  componentDidMount() {
+    console.log('index mounted')
+  }
   // static async getInitialProps ({ req }) {
   //   return req
   //     ? { userAgent: req.headers['user-agent'] }
@@ -61,6 +64,7 @@ export default class extends React.Component {
         </svg>
       </h1>
       Hello World {this.state.aaa}
+      <img src="/static/img.png" />
       <div>Click <Link href="/about"><a>here</a></Link> to read more</div>
     </div>
   }
