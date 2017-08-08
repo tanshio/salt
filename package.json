@@ -12,7 +12,6 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "flubber": "^0.3.1",
     "next": "beta",
     "pixi.js": "^4.5.3",
     "react": "15.5.4",

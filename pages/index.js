@@ -31,8 +31,6 @@ export default class extends React.Component {
   render () {
     return <div>
       <style jsx>{`
-
-
         h1 {
           position: fixed;
           width: 100%;
@@ -41,7 +39,6 @@ export default class extends React.Component {
           line-height: 0;
           // transform: translateY(5%);
         }
-
         // h1 span:nth-of-type(3) {
         //   width: 22%;
         // }
@@ -64,7 +61,6 @@ export default class extends React.Component {
         </svg>
       </h1>
       Hello World {this.state.aaa}
-      <img src="/static/img.png" />
       <div>Click <Link href="/about"><a>here</a></Link> to read more</div>
     </div>
   }

@@ -92,11 +92,6 @@ export default class extends React.Component {
               position={this.state.planePosition}
               rotation={this.state.planeRotation}
             >
-              <textGeometry
-                text="SALT"
-                font={null}
-                size={100}
-              />
               <boxGeometry
                 width={100}
                 height={100}
