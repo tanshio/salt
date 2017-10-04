@@ -1,6 +1,6 @@
 {
   "name": "salt",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -12,8 +12,11 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "d3": "^4.10.0",
+    "flubber": "^0.3.1",
     "next": "beta",
     "pixi.js": "^4.5.3",
+    "postprocessing": "^2.2.0",
     "react": "15.5.4",
     "react-dom": "15.5.4",
     "react-ga": "^2.2.0",
