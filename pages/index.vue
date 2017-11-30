@@ -1,17 +1,11 @@
 <template>
   <section class="container">
     <div>
-      <logo/>
-      <h1 class="title">
-        nuxt-3
-      </h1>
-      <h2 class="subtitle">
-        Nuxt.js project
-      </h2>
       <div class="links">
         <ul>
           <li><nuxt-link to="/effect01">About page</nuxt-link></li>
           <li><nuxt-link to="/effect02">About page</nuxt-link></li>
+          <li><nuxt-link to="/effect03">About page</nuxt-link></li>
         </ul>
       </div>
     </div>
