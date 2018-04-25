@@ -1,5 +1,5 @@
 <template>
-  <section class="container">
+  <section class="container" @click="setCanvas">
     <canvas id="canvas"></canvas>
   </section>
 </template>
@@ -7,6 +7,7 @@
 <script>
 import json from '~/static/data.json'
 import Logo from '~/components/Logo.vue'
+import html2canvas from 'html2canvas'
 var debounce
 if (process.browser) {
   debounce = require('lodash-es/debounce').default
@@ -69,6 +70,13 @@ export default {
       console.log('aaa')
       // `vm` を通じてコンポーネントインスタンスにアクセス
     })
+  },
+  methods: {
+    setCanvas () {
+      html2canvas(document.querySelector('.container')).then(canvas => {
+        document.body.appendChild(canvas)
+      })
+    }
   }
 }
 </script>

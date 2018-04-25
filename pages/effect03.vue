@@ -70,7 +70,7 @@ export default {
     }
   },
   beforeRouteEnter (to, from, next) {
-    next(vm => {
+    next((vm) => {
       console.log('aaa')
       // `vm` を通じてコンポーネントインスタンスにアクセス
     })

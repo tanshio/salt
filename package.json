@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "gsap": "^1.20.3",
+    "html2canvas": "^1.0.0-alpha.12",
     "lodash-es": "^4.17.4",
     "nuxt": "^1.0.0-rc11",
     "three-effectcomposer-es6": "^0.0.4",

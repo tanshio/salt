@@ -8,16 +8,25 @@
           <li><nuxt-link to="/effect03">About page</nuxt-link></li>
         </ul>
       </div>
+      <button @click="setCanvas">レンダー</button>
     </div>
   </section>
 </template>
 
 <script>
 import Logo from '~/components/Logo.vue'
+import html2canvas from 'html2canvas'
 
 export default {
   components: {
     Logo
+  },
+  methods: {
+    setCanvas () {
+      html2canvas(document.querySelector('.container')).then(canvas => {
+        document.body.appendChild(canvas)
+      })
+    }
   }
 }
 </script>
