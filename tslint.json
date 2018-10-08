@@ -1,0 +1,14 @@
+{
+  "rulesDirectory": [ "tslint-plugin-prettier" ],
+  "rules": {
+    "prettier": [
+      true,
+      {
+        "trailingComma": "all",
+        "arrowParens": "always",
+        "semi": false,
+        "singleQuote": true
+      }
+    ]
+  }
+}

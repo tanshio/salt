@@ -1,5 +1,5 @@
 <template>
-  <section class="container" @click="setCanvas">
+  <section class="container2" @click="setCanvas">
     <canvas id="canvas"></canvas>
   </section>
 </template>
@@ -8,9 +8,11 @@
 import json from '~/static/data.json'
 import Logo from '~/components/Logo.vue'
 import html2canvas from 'html2canvas'
-var debounce
+let bodyScrollLock
+let debounce
 if (process.browser) {
   debounce = require('lodash-es/debounce').default
+  bodyScrollLock = require('body-scroll-lock')
 }
 
 class FillBox {
@@ -58,10 +60,13 @@ export default {
   mounted () {
     console.log('hello')
     console.log(json)
+    console.log(bodyScrollLock)
+    // bodyScrollLock.disableBodyScroll(document.querySelector('.l-container'))
 
     let fillBox = new FillBox('canvas')
     fillBox.render()
     if (process.browser) {
+      bodyScrollLock.disableBodyScroll(document.querySelector('.container2'))
       window.addEventListener('resize', debounce(fillBox.resizeHandler, 200))
     }
   },
@@ -82,12 +87,17 @@ export default {
 </script>
 
 <style>
-.container {
-  min-height: 100vh;
+.container2 {
+  position: fixed;
+  top:0;
+  left: 0;
   display: flex;
-  justify-content: center;
-  align-items: center;
   text-align: center;
+  width: 100%;
+  height: 100vh;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+
 }
 
 .title {

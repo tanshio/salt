@@ -1,11 +1,17 @@
 {
-  "name": "nuxt-3",
+  "name": "SALT",
   "version": "1.0.0",
   "description": "Nuxt.js project",
   "author": "tanshio <rakuburomail+tanshio@gmail.com>",
   "private": true,
+  "config": {
+    "nuxt": {
+      "host": "0.0.0.0",
+      "port": "3555"
+    }
+  },
   "scripts": {
-    "dev": "HOST=0.0.0.0 PORT=3333 nuxt",
+    "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
@@ -13,14 +19,19 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
+    "body-scroll-lock": "^2.5.10",
     "gsap": "^1.20.3",
     "html2canvas": "^1.0.0-alpha.12",
     "lodash-es": "^4.17.4",
-    "nuxt": "^1.0.0-rc11",
+    "nuxt": "^2.1.0",
+    "pixi.js": "^4.7.3",
+    "three": "^0.92.0",
     "three-effectcomposer-es6": "^0.0.4",
+    "vh-check": "^2.0.2",
     "vue-no-ssr": "^0.2.2"
   },
   "devDependencies": {
+    "@types/node": "^10.11.4",
     "babel-eslint": "^7.2.3",
     "eslint": "^4.3.0",
     "eslint-config-standard": "^10.2.1",
@@ -29,6 +40,21 @@
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-node": "^5.1.1",
     "eslint-plugin-promise": "^3.5.0",
-    "eslint-plugin-standard": "^3.0.1"
+    "eslint-plugin-standard": "^3.0.1",
+    "glslify-loader": "^1.0.2",
+    "node-sass": "^4.9.3",
+    "nuxt-property-decorator": "^1.2.0",
+    "prettier": "^1.14.3",
+    "pug": "^2.0.3",
+    "pug-plain-loader": "^1.0.0",
+    "raw-loader": "^0.5.1",
+    "sass-loader": "^7.1.0",
+    "ts-loader": "^5.2.1",
+    "tslint": "^5.11.0",
+    "tslint-config-prettier": "^1.15.0",
+    "tslint-config-standard": "^8.0.1",
+    "tslint-plugin-prettier": "^2.0.0",
+    "typescript": "^3.1.1",
+    "vuex-class": "^0.3.1"
   }
 }

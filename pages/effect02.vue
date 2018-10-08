@@ -42,8 +42,8 @@ class FillBox {
   }
 
   resize () {
-    this.width = window.innerWidth * devicePixelRatio
-    this.height = window.innerHeight * devicePixelRatio
+    this.width = document.body.clientHeight * devicePixelRatio
+    this.height = document.body.clientHeight * devicePixelRatio
     this.canvas.width = this.width
     this.canvas.height = this.height
     this.canvas.style.width = `${this.canvas.width / devicePixelRatio}px`
