@@ -1,0 +1,41 @@
+@import "_var.css";
+@import "normalize.css";
+@import url("//hello.myfonts.net/count/37bb08");
+@font-face {font-family: 'Celias-Medium';src: url('~assets/webfonts/37BB08_0_0.eot');src: url('~assets/webfonts/37BB08_0_0.eot?#iefix') format('embedded-opentype'),url('~assets/webfonts/37BB08_0_0.woff2') format('woff2'),url('~assets/webfonts/37BB08_0_0.woff') format('woff'),url('~assets/webfonts/37BB08_0_0.ttf') format('truetype');}
+
+
+@font-face {font-family: 'Celias-Regular';src: url('~assets/webfonts/37BB08_1_0.eot');src: url('~assets/webfonts/37BB08_1_0.eot?#iefix') format('embedded-opentype'),url('~assets/webfonts/37BB08_1_0.woff2') format('woff2'),url('~assets/webfonts/37BB08_1_0.woff') format('woff'),url('~assets/webfonts/37BB08_1_0.ttf') format('truetype');}
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: var(--g-fontFamily);
+  background-color: #ffffff;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  font-feature-settings: 'palt';
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.container2 {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}

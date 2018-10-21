@@ -66,7 +66,7 @@ export default {
     let fillBox = new FillBox('canvas')
     fillBox.render()
     if (process.browser) {
-      bodyScrollLock.disableBodyScroll(document.querySelector('.container2'))
+      // bodyScrollLock.disableBodyScroll(document.querySelector('.container2'))
       window.addEventListener('resize', debounce(fillBox.resizeHandler, 200))
     }
   },
@@ -78,46 +78,10 @@ export default {
   },
   methods: {
     setCanvas () {
-      html2canvas(document.querySelector('.container')).then(canvas => {
-        document.body.appendChild(canvas)
-      })
+      // html2canvas(document.querySelector('.container')).then(canvas => {
+      //   document.body.appendChild(canvas)
+      // })
     }
   }
 }
 </script>
-
-<style>
-.container2 {
-  position: fixed;
-  top:0;
-  left: 0;
-  display: flex;
-  text-align: center;
-  width: 100%;
-  height: 100vh;
-  overflow: scroll;
-  -webkit-overflow-scrolling: touch;
-
-}
-
-.title {
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
-</style>

@@ -1,0 +1,5 @@
+:root {
+  --g-fontFamily: Celias-Regular, sans-serif;
+  --g-color-primary: #e54f4f;
+}
+@custom-media --v-md (min-width: 768px);

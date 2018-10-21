@@ -13,6 +13,9 @@ module.exports = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
+  css: [
+    '@assets/css/global.css'
+  ],
   /*
   ** Customize the progress bar color
   */
@@ -28,6 +31,21 @@ module.exports = {
     build: {
       vendor: ['gsap', 'three', 'three-effectcomposer-es6', 'pixi.js', 'lodash-es', 'vue-no-ssr']
     },
+    postcss: [
+      require('postcss-normalize')(),
+      require('postcss-import')(),
+      require('postcss-nesting')(),
+      require('postcss-custom-properties')({
+        preserve: true
+      }),
+      require('postcss-custom-media')(),
+      require('postcss-color-mod-function')(),
+      require('postcss-flexbugs-fixes')(),
+      require('autoprefixer')(),
+      require('css-mqpacker')({
+        sort: true
+      })
+    ],
     /*
     ** Run ESLint on save
     */

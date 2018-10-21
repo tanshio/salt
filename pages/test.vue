@@ -13,13 +13,15 @@
   @Component({})
   export default class Test extends Base {
 
+    timer:number = null
+
     test() {
       console.log('overload')
     }
 
-    // created() {
-    //   console.log('test')
-    //   this.test()
-    // }
+    created() {
+      console.log('test')
+      this.test()
+    }
   }
 </script>
