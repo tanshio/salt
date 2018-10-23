@@ -39,3 +39,13 @@ img {
   align-items: center;
   text-align: center;
 }
+
+.c-controller {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
+  width: 300px;
+  height: 100vh;
+  background-color: rgba(255,255,255,.6);
+}

@@ -1,14 +1,17 @@
 export class Wave {
 
-  SWING_HEIGHT: number = 0.05 // 高さの振り幅
-  SWING_WIDTH: number = 2 // 横の周期数
-
   canvas:HTMLCanvasElement
   ctx: CanvasRenderingContext2D | null
   resizeHandler
   width: number
   height: number
-  obj: any
+  obj: {
+    counter: number,
+    timer: number,
+    SWING_HEIGHT: number,
+    SWING_WIDTH: number,
+    SPEED: number,
+  }
 
   constructor (el, obj) {
     console.log(obj)
@@ -45,12 +48,13 @@ export class Wave {
   }
 
   drawSine () {
-    this.obj.counter += 1
+    this.obj.counter += Number(this.obj.SPEED)
+    console.log(this.obj.SPEED)
     if (this.ctx) {
       this.ctx.moveTo(-1, this.height * 0.5)
       for (let i = -1; i < this.width + 2; i++) {
-        const sin = Math.sin((i * 180 * this.SWING_WIDTH / this.width + this.obj.counter) * Math.PI / 180)
-        this.ctx.lineTo(i, this.height * 0.5 - sin * this.height * this.SWING_HEIGHT)
+        const sin = Math.sin((i * 180 * this.obj.SWING_WIDTH / this.width + this.obj.counter) * Math.PI / 180)
+        this.ctx.lineTo(i, this.height * 0.5 - sin * this.height * this.obj.SWING_HEIGHT)
       }
     }
   }

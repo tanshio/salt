@@ -1,5 +1,16 @@
 <template>
   <section class="container2">
+    <div class="c-controller">
+      <div>
+        <input type="range" v-model="SWING_WIDTH" min="0" max="100">{{SWING_WIDTH}}
+      </div>
+      <div>
+        <input type="range" v-model="SWING_HEIGHT" min="0" max="0.5" step="0.01">{{SWING_HEIGHT}}
+      </div>
+      <div>
+        <input type="range" v-model="SPEED" min="0" max="10">{{SPEED}}
+      </div>
+    </div>
     <canvas id="canvas"></canvas>
     <!--<div style="position: absolute; z-index: 99">{{counter}}</div>-->
   </section>
@@ -22,6 +33,9 @@ import Base from './Base'
 export default class Effect03 extends Base {
 
   counter: number = 0
+  SWING_WIDTH: number = 2
+  SWING_HEIGHT: number = 0.05
+  SPEED: number = 2
 
   mounted() {
     console.log(json)
