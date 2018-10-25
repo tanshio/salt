@@ -11,7 +11,7 @@ export class Polyline {
     counter: number,
     timer: number,
   }
-  BALL_COUNT: 100
+  BALL_COUNT:number = 100
   balls: any = []
 
   constructor (el, obj) {
@@ -22,46 +22,53 @@ export class Polyline {
     this.width = window.innerWidth * devicePixelRatio
     this.height = window.innerHeight * devicePixelRatio
     this.obj = obj
-    console.log(this.obj)
+    console.log(this.obj, 'obj')
 
     for (let i = 0; i < this.BALL_COUNT; i++) {
+      console.log('a')
+      const r = Math.random() * 10 + 2
       this.balls.push(new Ball({
-        x: 0,
-        y: 0,
-        r: 0,
-        degree: 0,
-        speed: 0,
+        x: Math.random() * this.width - r * 0.5,
+        y: Math.random() * this.height - r * 0.5,
+        r: Math.random() * 10 + 2,
+        degree: Math.random() * 360,
+        speed: Math.random() * 5,
       }))
     }
+
+    console.log(this.balls, 'balls')
 
     this.resize()
   }
 
   init () {
+    console.log('init')
     cancelAnimationFrame(this.obj.timer)
     this.resize()
     this.render()
   }
 
   render () {
-    if (this.ctx) {
-      this.ctx.clearRect(0, 0, this.width + 1, this.height + 1);
-      this.ctx.strokeStyle = '#000'
-      // this.ctx.lineWidth = 10
-      this.ctx.beginPath()
-      this.ctx.lineTo(this.width + 1, this.height + 1)
-      this.ctx.lineTo(-1, this.height + 1)
-      this.ctx.closePath()
-      this.ctx.stroke()
 
-      this.ctx.arc(grid * i - grid * 0.5, grid * k - grid * 0.5, size * 0.5, 0, Math.PI * 2, true)
-      this.ctx.fill()
+    if (this.ctx) {
+      this.ctx.clearRect(0, 0, this.width, this.height);
+      this.balls.forEach((ball: Ball) => {
+        if (this.ctx) {
+          this.ctx.beginPath()
+          this.ctx.arc(ball.x, ball.y, ball.r, 0,Math.PI * 2, true)
+          this.ctx.fillStyle = ball.color
+          this.ctx.fill()
+          ball.move()
+        }
+        // console.log(this.balls)
+      })
 
       this.obj.timer = requestAnimationFrame(this.render.bind(this))
     }
   }
 
   resize () {
+    console.log('resize')
     this.width = window.innerWidth * devicePixelRatio
     this.height = window.innerHeight * devicePixelRatio
     this.canvas.width = this.width

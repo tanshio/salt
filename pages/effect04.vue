@@ -16,7 +16,7 @@
     debounce = require('lodash-es/debounce').default
   }
 
-  import {Wave} from './effect03/Wave'
+  import {Polyline} from './effect04/Polyline'
   import Base from './Base'
   @Component({})
   export default class Effect03 extends Base {
@@ -29,10 +29,10 @@
     mounted() {
       console.log(json)
       console.log('this', this, this.$el.querySelector('#canvas'))
-      let wave = new Wave(this.$el.querySelector('#canvas'), this)
-      wave.render()
+      let polyline = new Polyline(this.$el.querySelector('#canvas'), this)
+      polyline.render()
       if (process.browser) {
-        window.addEventListener('resize', debounce(wave.resizeHandler, 200))
+        window.addEventListener('resize', debounce(polyline.resizeHandler, 200))
       }
     }
   }

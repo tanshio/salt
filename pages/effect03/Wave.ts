@@ -26,6 +26,7 @@ export class Wave {
   }
 
   init () {
+    console.log('init')
     cancelAnimationFrame(this.obj.timer)
     this.resize()
     this.render()
@@ -49,7 +50,7 @@ export class Wave {
 
   drawSine () {
     this.obj.counter += Number(this.obj.SPEED)
-    console.log(this.obj.SPEED)
+    // console.log(this.obj.SPEED)
     if (this.ctx) {
       this.ctx.moveTo(-1, this.height * 0.5)
       for (let i = -1; i < this.width + 2; i++) {
