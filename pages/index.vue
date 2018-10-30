@@ -1,9 +1,10 @@
 <template lang="pug">
   section.container
-    List(:link="'/effect04'" :title="'POLYLINE'" :categories="['Canvas','Animation']" :img="'img02.jpg'")
+    List(:link="'/effect05'" :title="'POLYLINE'" :categories="['Canvas','Animation']" :img="'img05.png'")
+    List(:link="'/effect04'" :title="'PARTICLE'" :categories="['Canvas','Animation']" :img="'img04.png'")
     List(:link="'/effect03'" :title="'LINE'" :categories="['Canvas','Animation']" :img="'img03.png'")
-    List(:link="'/effect02'" :title="'BUBBLE'" :categories="['Canvas','Animation']" :img="'img02.jpg'")
-    List(:link="'/effect01'" :title="'BUBBLE'" :categories="['WebGL','Animation']" :img="'img01.png'")
+    <!--List(:link="'/effect02'" :title="'BUBBLE'" :categories="['Canvas','Animation']" :img="'img02.jpg'")-->
+    List(:link="'/effect01'" :title="'TILE'" :categories="['Canvas']" :img="'img01.png'")
 </template>
 
 <script lang="ts">

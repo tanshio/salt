@@ -21,10 +21,11 @@ export class Ball {
   }) {
     this.x = x
     this.y = y
-    this.r = r * devicePixelRatio
+    this.r = 3 * devicePixelRatio
     this.degree = degree
     this.speed = speed
-    this.color = `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 100)}, ${Math.floor(Math.random() * 100)})`
+    // this.color = `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 100)}, ${Math.floor(Math.random() * 100)})`
+    this.color = `rgb(255, 255, 255, 0.8)`
   }
 
   move() {

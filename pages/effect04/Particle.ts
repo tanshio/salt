@@ -1,6 +1,6 @@
 import {Ball} from './Ball'
 
-export class Polyline {
+export class Particle {
 
   canvas:HTMLCanvasElement
   ctx: CanvasRenderingContext2D | null

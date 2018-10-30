@@ -4,7 +4,7 @@ import { Component, Provide, Vue } from 'nuxt-property-decorator'
 export default class Base extends Vue {
   @Provide() person: 'aaa'
 
-  timer: number| null = null;
+  timer: number | null = null;
 
   test() {
     console.log('aaa')
