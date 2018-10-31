@@ -19,8 +19,8 @@ export class Particle {
     this.canvas = el
     this.ctx = this.canvas.getContext('2d')
     this.resizeHandler = this.init.bind(this)
-    this.width = window.innerWidth * devicePixelRatio
-    this.height = window.innerHeight * devicePixelRatio
+    this.width = window.innerWidth
+    this.height = window.innerHeight
     this.obj = obj
     console.log(this.obj, 'obj')
 
@@ -69,11 +69,11 @@ export class Particle {
 
   resize () {
     console.log('resize')
-    this.width = window.innerWidth * devicePixelRatio
-    this.height = window.innerHeight * devicePixelRatio
+    this.width = window.innerWidth
+    this.height = window.innerHeight
     this.canvas.width = this.width
     this.canvas.height = this.height
-    this.canvas.style.width = `${this.canvas.width / devicePixelRatio}px`
-    this.canvas.style.height = `${this.canvas.height / devicePixelRatio}px`
+    this.canvas.style.width = `${this.canvas.width}px`
+    this.canvas.style.height = `${this.canvas.height}px`
   }
 }

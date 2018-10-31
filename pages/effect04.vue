@@ -1,7 +1,6 @@
 <template>
   <section class="container2">
-    <canvas id="canvas"></canvas>
-    <!--<div style="position: absolute; z-index: 99">{{counter}}</div>-->
+    <canvas id="canvas" ref="canvas"></canvas>
   </section>
 </template>
 
@@ -22,15 +21,16 @@
   @Component({})
   export default class Effect04 extends Base {
 
-    mounted() {
+    init() {
       console.log(json)
-      console.log('this', this, this.$el.querySelector('#canvas'))
-      let particle = new Particle(this.$el.querySelector('#canvas'), this)
+      console.log('this', this, this.$refs.canvas)
+      let particle = new Particle(this.$refs.canvas, this)
       particle.render()
       if (process.browser) {
         window.addEventListener('resize', debounce(particle.resizeHandler, 200))
       }
     }
+
   }
 </script>
 

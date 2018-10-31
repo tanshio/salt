@@ -21,7 +21,7 @@ export class Ball {
   }) {
     this.x = x
     this.y = y
-    this.r = 3 * devicePixelRatio
+    this.r = 3
     this.degree = degree
     this.speed = speed
     // this.color = `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 100)}, ${Math.floor(Math.random() * 100)})`
@@ -33,11 +33,11 @@ export class Ball {
     let nextX = this.x + this.speed * Math.cos( this.degree * (Math.PI / 180) )
     let nextY = this.y + this.speed * Math.sin( this.degree * (Math.PI / 180) )
 
-    if(nextX < this.r || nextX > window.innerWidth * devicePixelRatio-this.r){
+    if(nextX < this.r || nextX > window.innerWidth-this.r){
       this.degree = 180 - this.degree
       nextX = this.x + this.speed * Math.cos( this.degree * (Math.PI / 180) )
     }
-    if(nextY < this.r || nextY > window.innerHeight * devicePixelRatio-this.r){
+    if(nextY < this.r || nextY > window.innerHeight-this.r){
       this.degree = 360 - this.degree
       nextY = this.y + this.speed * Math.sin( this.degree * (Math.PI / 180) )
     }

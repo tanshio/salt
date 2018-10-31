@@ -37,7 +37,7 @@ export default class Effect03 extends Base {
   SWING_HEIGHT: number = 0.05
   SPEED: number = 2
 
-  mounted() {
+  init() {
     console.log(json)
     console.log('this', this, this.$el.querySelector('#canvas'))
     let wave = new Wave(this.$el.querySelector('#canvas'), this)

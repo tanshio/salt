@@ -1,7 +1,6 @@
 <template>
   <section class="container2">
-    <canvas id="canvas"></canvas>
-    <!--<div style="position: absolute; z-index: 99">{{counter}}</div>-->
+    <canvas id="canvas" ref="canvas"></canvas>
   </section>
 </template>
 
@@ -22,10 +21,10 @@ export default class Effect05 extends Base {
   SWING_HEIGHT: number = 0.05
   SPEED: number = 2
 
-  mounted() {
+  init() {
     console.log(json)
-    console.log('this', this, this.$el.querySelector('#canvas'))
-    let polyline = new Polyline(this.$el.querySelector('#canvas'), this)
+    console.log('this', this, this.$refs.canvas)
+    let polyline = new Polyline(this.$refs.canvas, this)
     polyline.render()
     if (process.browser) {
       window.addEventListener('resize', debounce(polyline.resizeHandler, 200))

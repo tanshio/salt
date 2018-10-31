@@ -18,8 +18,8 @@ export class Wave {
     this.canvas = el
     this.ctx = this.canvas.getContext('2d')
     this.resizeHandler = this.init.bind(this)
-    this.width = window.innerWidth * devicePixelRatio
-    this.height = window.innerHeight * devicePixelRatio
+    this.width = window.innerWidth
+    this.height = window.innerHeight
     this.obj = obj
     console.log(this.obj)
     this.resize()
@@ -61,11 +61,11 @@ export class Wave {
   }
 
   resize () {
-    this.width = window.innerWidth * devicePixelRatio
-    this.height = window.innerHeight * devicePixelRatio
+    this.width = window.innerWidth
+    this.height = window.innerHeight
     this.canvas.width = this.width
     this.canvas.height = this.height
-    this.canvas.style.width = `${this.canvas.width / devicePixelRatio}px`
-    this.canvas.style.height = `${this.canvas.height / devicePixelRatio}px`
+    this.canvas.style.width = `${this.canvas.width}px`
+    this.canvas.style.height = `${this.canvas.height}px`
   }
 }
