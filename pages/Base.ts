@@ -10,6 +10,14 @@ export default class Base extends Vue {
 
   }
 
+  leave() {
+    console.log(this.timer)
+    if (this.timer) {
+      console.log('clear',this.timer)
+      cancelAnimationFrame(this.timer)
+    }
+  }
+
   mounted() {
     this.init()
   }
@@ -20,9 +28,7 @@ export default class Base extends Vue {
     })
   }
   beforeRouteLeave (to, from, next) {
-    if (this.timer) {
-      cancelAnimationFrame(this.timer)
-    }
+    this.leave()
     next()
   }
 }

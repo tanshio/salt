@@ -1,5 +1,6 @@
 <template lang="pug">
   section.container
+    List(:link="'/effect06'" :title="'test'" :categories="['Canvas','Animation']" :img="'img05.png'")
     List(:link="'/effect05'" :title="'POLYLINE'" :categories="['Canvas','Animation']" :img="'img05.png'")
     List(:link="'/effect04'" :title="'PARTICLE'" :categories="['Canvas','Animation']" :img="'img04.png'")
     List(:link="'/effect03'" :title="'LINE'" :categories="['Canvas','Animation']" :img="'img03.png'")

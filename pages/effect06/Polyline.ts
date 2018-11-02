@@ -1,28 +1,29 @@
 import {Ball} from './Ball'
 
-export class Particle {
+export class Polyline {
 
   canvas:HTMLCanvasElement
   ctx: CanvasRenderingContext2D | null
   resizeHandler
   width: number
   height: number
-  vue: {
+  obj: {
     counter: number,
     timer: number,
   }
-  BALL_COUNT:number = 100
+  BALL_COUNT:number = 200
+  STROKE_LENGTH: number = 200
   balls: any = []
 
-  constructor (el, vue) {
-    console.log(vue)
+  constructor (el, obj) {
+    console.log(obj)
     this.canvas = el
     this.ctx = this.canvas.getContext('2d')
     this.resizeHandler = this.init.bind(this)
     this.width = window.innerWidth
     this.height = window.innerHeight
-    this.vue = vue
-    console.log(this.vue, 'vue')
+    this.obj = obj
+    console.log(this.obj, 'obj')
 
     for (let i = 0; i < this.BALL_COUNT; i++) {
       console.log('a')
@@ -43,7 +44,7 @@ export class Particle {
 
   init () {
     console.log('init')
-    cancelAnimationFrame(this.vue.timer)
+    cancelAnimationFrame(this.obj.timer)
     this.resize()
     this.render()
   }
@@ -51,9 +52,41 @@ export class Particle {
   render () {
 
     if (this.ctx) {
-      this.ctx.clearRect(0, 0, this.width, this.height);
-      this.balls.forEach((ball: Ball) => {
+      this.ctx.clearRect(0, 0, this.width, this.height)
+      this.ctx.fillStyle = 'rgb(0, 0, 0)'
+      this.ctx.fillRect(0, 0, this.width, this.height)
+      this.balls.forEach((ball: Ball, i:number) => {
+
+        let points: Ball[] = []
+        for (let j = 0; j < this.balls.length; j++) {
+          if (i !== j) {
+            const dX = Math.pow(this.balls[j].x - ball.x, 2)
+            const dY = Math.pow(this.balls[j].y - ball.y, 2)
+            const len = Math.sqrt(Math.abs(dX + dY))
+            if (this.STROKE_LENGTH > len) {
+              points.push(this.balls[j])
+              // console.log(len)
+              if(points.length > 2) {
+                break
+              }
+            }
+          }
+
+        }
         if (this.ctx) {
+          // console.log(points)
+          if(points.length > 0) {
+            points.forEach((point: Ball) => {
+              if (this.ctx) {
+                this.ctx.beginPath()
+                this.ctx.strokeStyle = "rgba(255, 255, 255, 0.3)";
+                this.ctx.moveTo(ball.x, ball.y)
+                this.ctx.lineTo(point.x, point.y)
+                this.ctx.stroke()
+                this.ctx.closePath()
+              }
+            })
+          }
           this.ctx.beginPath()
           this.ctx.arc(ball.x, ball.y, ball.r, 0,Math.PI * 2, true)
           this.ctx.fillStyle = ball.color
@@ -63,7 +96,7 @@ export class Particle {
         // console.log(this.balls)
       })
 
-      this.vue.timer = requestAnimationFrame(this.render.bind(this))
+      this.obj.timer = requestAnimationFrame(this.render.bind(this))
     }
   }
 
