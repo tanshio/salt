@@ -12,8 +12,8 @@ if (process.browser) {
   debounce = require('lodash-es/debounce').default
 }
 
-import { Polyline } from './effect05/Polyline'
-import Base from './Base'
+import { Polyline } from './Polyline'
+import Base from '../Base'
 @Component({})
 export default class Effect05 extends Base {
   counter: number = 0

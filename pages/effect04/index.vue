@@ -16,8 +16,8 @@
     debounce = require('lodash-es/debounce').default
   }
 
-  import {Particle} from './effect04/Particle'
-  import Base from './Base'
+  import {Particle} from './Particle'
+  import Base from '../Base'
   @Component({})
   export default class Effect04 extends Base {
 

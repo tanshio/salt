@@ -27,8 +27,8 @@ if (process.browser) {
   debounce = require('lodash-es/debounce').default
 }
 
-import {Wave} from './effect03/Wave'
-import Base from './Base'
+import {Wave} from './Wave'
+import Base from '../Base'
 @Component({})
 export default class Effect03 extends Base {
 
